@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "StrList.h"
-
-void printMenu() {
-    printf("\nMenu:\n");
+/** 
+ * This is what this class does:
     printf("1. Insert strings into the list\n");
     printf("2. Insert a string at a certain index\n");
     printf("3. Print the list\n");
@@ -19,6 +18,7 @@ void printMenu() {
     printf("13. Check if the list is arranged in lexicographical order\n");
     printf("0. Exit the program\n");
 }
+*/
 
 int main() {
     StrList* list = StrList_alloc(); // Initialize an empty list
@@ -28,17 +28,14 @@ int main() {
     char input[100];
 
     do {
-        // printMenu();
         // printf("Enter your choice: ");
         scanf("%d", &choice);
-        // getchar(); // Clear the newline character from the input buffer
 
         switch (choice) {
             case 1:
                 // Insert strings into the list
                 // printf("Enter the number of words: ");
                 scanf("%d", &numWords);
-                // getchar(); // Clear the newline character from the input buffer
                 // printf("Enter %d words separated by space:\n", numWords);
                 for (int i = 0; i < numWords; i++) {
                     char input[50];
@@ -92,7 +89,6 @@ int main() {
                 // Delete a string at a certain index
                 // printf("Enter the index of the string to delete: ");
                 scanf("%d", &index);
-                // getchar(); // Clear the newline character from the input buffer
                 StrList_removeAt(list, index);
                 break;
             case 10:
@@ -101,15 +97,6 @@ int main() {
                 // printf("List reversed.\n");
                 break;
             case 11:
-                /**int index1 = 0;
-                int size = StrList_size(list);
-
-                while (index1 < size)
-                {
-                    //printf("size %d\n", size);
-                    StrList_remove(list, NULL);
-                    index1++;
-                }*/
                 
                 int size = StrList_size(list);
                 int i = (size)-1;
@@ -118,15 +105,7 @@ int main() {
                 i--;
                 }
                 list = StrList_alloc();
-                
-            
-                //list->head->data= "";  
-                
                 break;
-
-                //StrList_free(list);
-                //list = StrList_alloc();
-                //break;
             case 12:
                 // Sort the list in lexicographical order
                 StrList_sort(list);
